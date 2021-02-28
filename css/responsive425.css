@@ -1,0 +1,313 @@
+header {
+    display: inline-block;
+}
+
+header .flippedSquare {
+    width: 170px;
+    min-width: 170px;
+    height: 90px;
+    min-height: 90px;
+}
+
+header .flippedSquare img {
+    width: 3rem;
+}
+
+header .headerButtons {
+    display: flex;
+    justify-content: flex-end;
+    overflow-x: visible;
+    flex-direction: column-reverse;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+}
+
+header .headerButtons button#dropdownMenu {
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.dropdownMenu {
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: 0 4px 20px #000;
+}
+
+.dropdownMenu button.exit {
+    display: block;
+    position: absolute; 
+    border-radius: 0;
+    padding: 0;
+    width: 1.3rem;
+    height: 1.3rem;
+    top: 1.5rem; 
+    right: 1.5rem;
+
+    background-color: transparent;
+    background-image: url("../assets/svg/close.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.dropdownMenu button.exit:hover {
+    box-shadow: 0 0 0 #FFF;
+}
+
+.dropdownMenu > div {
+    height: 20rem;
+}
+
+.contactModal {
+    padding: 2rem;
+}
+
+.contactModal h2 {
+    font-size: 24px;
+    margin-bottom: 1rem;
+}
+
+.contactModal h3 {
+    font-size: 16px;
+}
+
+.contactModal h3 span.highlight {
+    padding: 0.1rem 0.2rem;
+}
+
+.contactModal form fieldset {
+    margin: 0.5rem 0;
+}
+
+.contactModal form fieldset label {
+font-size: 12px;
+}
+
+section {
+    padding: 0 10%;
+}
+
+section.intro {
+    margin-top: -20rem;
+    padding: 23rem 10% 0;
+}
+
+section.intro .contentBox > h1 {
+    font-size: 20px;
+    padding: 0;
+    margin-bottom: 5rem;
+}
+
+button.lemon {
+    font-size: 13px;
+}
+
+section.second div:last-child {
+    flex-direction: column-reverse;
+}
+
+section.second div:last-child img {
+    width: 50%;
+    margin-bottom: 2rem;
+}
+
+section.third .leftBlue {
+    padding: 4rem 10%;
+} 
+
+section.third .leftBlue .infoDescription {
+    width: 100%;
+    margin: 0;
+}
+section.third .leftBlue .infoDescription h2, 
+section.third .leftBlue .infoDescription p {
+    width: 100%;
+    margin-right: 0;
+}
+
+section.third .rightBlack {
+    padding: 4rem 10%;
+}
+
+section.third .rightBlack h2:first-child {
+    margin: 0;
+    width: 100%;
+}
+
+section.third .rightBlack .period .periodMark {
+    width: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+section.third .rightBlack .period > img,
+section.third .rightBlack .period > h2 {
+    margin-right: 1rem;
+}  
+
+
+section.fourth .heading .headingLeft {
+    flex-direction: column;
+}
+
+section.fourth .heading .headingLeft .flippedSquare img {
+    width: 5rem;
+}
+
+section.fourth .heading .headingLeft h2 {
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+section.seventh .leftBlack > h2 {
+    width: 80%;
+    margin-left: 10%;
+}
+
+section.seventh .leftBlack .subsection {
+    padding: 0 10%;
+}
+
+section.seventh .subsection h3 {
+    width: 100%;
+}
+
+section.seventh .leftBlack .subsection:nth-child(3) h3 {
+    width: 100%;
+}
+
+section.seventh .subsection p {
+    width: 100%;
+}
+
+section.seventh .rightBlue {
+    padding: 5rem 10%;
+}
+
+section.seventh .rightBlue > h2 {
+    width: 90%;
+} 
+
+section.seventh .rightBlue .subsection button.lemon {
+    width: 100%;
+}
+
+section.eigth .icon {
+    width: 80%;
+    margin-left: 10%;
+    left: 0;
+    padding: 20%;
+}
+
+section.eigth .icon img {
+    width: 100%;
+}
+
+section.eigth .intro {
+    position: relative; 
+} 
+
+section.eigth > div:last-child button.scroll.scrollLeft {
+    margin-left: calc(40% - 4rem);
+}
+
+section.eigth > div:last-child button.scroll.scrollRight {
+    margin-left: calc(40% + 1rem);
+
+}
+
+section.nineth .valueCards div h1 {
+    font-size: 28px;
+}
+
+section.nineth button.lemon {
+    width: 100%;
+    margin-left: 0;
+}
+
+section.tenth .leftDark {
+    padding-left: 10%; 
+}
+
+section.tenth .leftDark h3 {
+    width: 90%;
+}
+
+section.tenth .leftDark .depositions {
+    width: 90%;
+}
+
+section.tenth .leftDark .depositions .videos {
+    width: 90%;
+}
+
+section.tenth .rightLight > h2,
+section.tenth .rightLight > h3 {
+    margin-left: 0;
+    width: 100%;
+}
+
+section.tenth .rightLight .customers {
+    display: inline-block;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+
+section.tenth .rightLight .customers .customersCol {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    display: inline-flex;
+    width: 70%;
+    margin-left: 15%;
+    vertical-align: top;
+}
+
+section.tenth .rightLight .customers .customersCol:first-child {
+    margin-left: 0;
+}
+
+section.tenth .rightLight .customers .customersCol:nth-child(2) {
+    margin-top: 0;
+}
+
+section.eleventh > p {
+    width: 100%;
+    margin-left: 0;
+} 
+
+section.eleventh .moreInfo {
+    justify-content: space-between;
+}
+
+section.eleventh .moreInfo .description > div {
+    padding: 1rem;
+}
+
+section.eleventh .moreInfo .description > div > p {
+    font-size: 12px;
+}
+
+section.twelfth .video iframe {
+    width: 80vw;
+    height: 45vw;
+}
+
+footer {
+    padding: 2rem 10% 6rem;
+}
+
+footer .ownerLogo {
+    width: 30%;
+}
+
+footer .ownerLogo img {
+    width: 100%;
+}
+
+footer .copyrightContent {
+    width: 100%;
+}

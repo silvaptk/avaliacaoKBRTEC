@@ -1,0 +1,402 @@
+.contactModal {
+    width: 70%;
+    left: 15%;
+}
+
+.contactResponseModal {
+    width: 80%;
+    left: 10%;
+    top: 30%;
+}
+
+.contactResponseModal > img {
+    width: 25%;
+}
+
+section.about .leftTitle {
+    margin-top: 0;
+}
+
+section.about .aboutDescription {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+section.about .aboutDescription > div {
+    width: 100%;
+}
+
+section.about .aboutDescription .descriptionText {
+    width: 100%;
+}
+
+section.about .aboutDescription > div:first-child {
+    width: 100%;
+    display: inline-block;
+    padding: 2rem;
+    margin: 0;
+}
+
+section.first .contentBox {
+    flex-direction: column;
+}
+
+section.first .contentBox > div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+section.first .contentBox > div img {
+    margin-right: 2rem;
+}
+
+section.first .contentBox p.infoDescription {
+    width: 80%;
+}
+
+section.third {
+    flex-direction: column;
+}
+
+section.third .leftBlue,
+section.third .rightBlack {
+    width: 100%;
+    position: relative;
+}
+
+section.third .rightBlack div.lazer {
+    display: inline-block;
+    width: 0.3rem;
+    height: 47rem;
+    margin-top: -47rem;
+    margin-bottom: -4rem;
+}
+
+section.fourth .heading {
+    flex-direction: column;
+}
+
+section.fourth .heading .headingLeft,
+section.fourth .heading .headingRight {
+    width: 100%;
+}
+
+section.fourth .heading .headingRight {
+    margin-top: 3rem;
+}
+
+section.fourth .corpse .items {
+    display: inline-block;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    height: 18rem;
+    white-space: nowrap;
+    width: calc(100% - 9rem);
+    font-size: 0;
+}
+
+section.fourth .corpse .items .item {
+    width: fit-content;
+    display: inline-block;
+    position: relative;
+    white-space: normal;
+    vertical-align: top;
+}
+
+section.fourth .corpse button.scroll {
+    border-radius: 0;
+    width: 3rem;
+    height: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+section.fourth .corpse button.scroll img {
+    transform: rotate(-90deg);
+    width: 0.6rem;
+    height: 0.6rem;
+} 
+
+section.fourth .corpse button.scrollLeft {
+    background: linear-gradient(59.46deg, #1D737E -67.96%, #4FB9C7 103.75%);
+    margin-right: 1rem;
+} 
+
+section.fourth .corpse button.scrollRight {
+    margin-left: 1rem;
+    background-color: var(--lemon);
+}
+
+section.fifth {
+    flex-direction: column;
+}
+
+section.fifth .leftContent {
+    width: 100%;
+}
+
+section.fifth button.lemon {
+    margin: 0;
+    margin-top: 4rem;
+}
+
+section.sixth .subscribePath {
+    margin: 0;
+}
+
+section.sixth .subscribePath div .subscribeStages > img {
+    display: none;
+}
+
+section.sixth .subscribePath div .subscribeStages img:nth-child(8) {
+    display: none;
+}
+
+
+section.sixth .subscribePath div .subscribeStages .subscribeStage {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+section.sixth .subscribePath div .subscribeStages .subscribeStage strong {
+    font-size: 36px;
+    padding: 2rem;
+    min-width: 0;
+}
+
+section.sixth .subscribePath .subscribeStages .subscribeStage:last-child {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+section.sixth .subscribePath div button.scroll {
+    position: absolute;
+    margin-top: 14rem;
+}
+
+section.sixth .subscribePath div button.scroll.scrollLeft {
+    left: calc(50% - 4rem);
+} 
+
+section.sixth .subscribePath div button.scroll.scrollRight {
+    left: 50%;
+}
+
+section.seventh {
+    flex-direction: column;
+}
+
+section.seventh .leftBlack,
+section.seventh .rightBlue {
+    width: 100%;
+}
+
+section.eigth .formations {
+    display: inline-block;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    height: 19rem;
+    white-space: nowrap;
+    width: calc(100% - 9rem);
+    font-size: 0;
+}
+
+section.eigth .formations > div {
+    width: 31%;
+    display: inline-block;
+    position: relative;
+    white-space: normal;
+    vertical-align: top;
+    margin: 0 1%;
+}
+
+section.eigth .formations > div:first-child {
+    margin-left: 0;
+}
+
+section.eigth .formations > div:last-child {
+    margin-right: 0;
+}
+
+section.eigth div button.scroll {
+    display: inline-block;
+    border-radius: 0;
+    width: 3rem;
+    height: 3rem;
+    position: relative;
+    display: inline-block;
+    bottom: 9rem;
+}
+
+section.eigth button.scroll img {
+    transform: rotate(-90deg);
+    width: 0.6rem;
+    height: 0.6rem;
+} 
+
+section.eigth button.scrollLeft {
+    background: linear-gradient(59.46deg, #1D737E -67.96%, #4FB9C7 103.75%);
+    margin-right: 1rem;
+} 
+
+section.eigth button.scrollRight {
+    margin-left: 1rem;
+    background-color: var(--lemon);
+}
+
+section.nineth .valueCards {
+    flex-direction: column;
+}
+
+section.nineth .valueCards > div {
+    width: 100%;
+}
+
+section.nineth .valueCards > div {
+    flex-direction: row;
+}
+
+section.nineth .valueCards > div:last-child {
+    margin-top: 2rem;
+}
+
+section.nineth .descriptions {
+    flex-direction: column;
+}
+
+section.nineth .descriptions > div {
+    width: 100%;
+}
+
+section.tenth {
+    flex-direction: column;
+} 
+
+section.tenth .leftDark,
+section.tenth .rightLight {
+    width: 100%;
+}
+
+section.tenth .leftDark > h3 {
+    width: 80%;
+}
+
+section.tenth .leftDark .depositions {
+    flex-direction: column;
+}
+
+section.tenth .leftDark .depositions .videos {    
+    display: inline-block;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    height: fit-content;
+    white-space: nowrap;
+}
+
+section.tenth .leftDark .depositions .controls {
+    flex-direction: row;
+    width: 8rem;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: 2rem;
+}
+
+section.tenth .rightLight {
+    padding: 0 10%;
+    padding-bottom: 10rem;
+}
+
+section.tenth .leftDark .depositions .videos {
+    width: 80%;
+}
+
+section.tenth .leftDark .depositions .videos .video {
+    display: inline-flex;
+    width: 80%;
+    height: auto;
+    margin: 0 10%;
+    position: relative;
+}
+
+section.tenth .leftDark .depositions .videos .video > video {
+    width: 100%;
+}
+
+section.tenth .leftDark .depositions .controls button {
+    width: 3rem;
+    height: 3rem;
+}
+
+section.tenth .leftDark .depositions .controls button img {
+    width: 1rem;
+}
+
+section.tenth .rightLight > h2 {
+    width: 80%;
+    margin-top: 5rem;
+}
+
+section.tenth .rightLight > h3 {
+    width: 80%;
+} 
+
+section.tenth .rightLight .customers {
+    margin-left: 0;
+}
+section.tenth .rightLight .customers .customersCol div {
+    height: 15rem;
+} 
+
+section.tenth .rightLight .customers .customersCol div img {
+    width: 70%;
+    margin-left: 15%;
+}
+
+section.eleventh .moreInfo {
+    display: flex;
+    align-items: stretch;
+}
+
+section.eleventh .moreInfo .icons,
+section.eleventh .moreInfo .description {
+    display: flex;
+    flex-direction: column;
+}
+
+section.eleventh .moreInfo .icons {
+    width: 10%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+section.eleventh .moreInfo .description {
+    margin: 0;
+    width: 80%;
+}
+
+section.eleventh .moreInfo .description div {
+    width: 100%; 
+    height: 45%;
+}
+
+section.eleventh .moreInfo .icons img {
+    width: 2rem;
+}
+
+footer {
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .copyrightContent {
+    margin: 2rem 0;
+}

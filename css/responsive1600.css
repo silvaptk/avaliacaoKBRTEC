@@ -1,0 +1,97 @@
+.dropdownMenu {
+    top: 7vw;
+}
+
+.contactModal {
+    width: 50%;
+    left: 25%;
+    height: 75%;
+    top: 12.5%;
+}
+
+.contactResponseModal {
+    width: 40%;
+    left: 30%;
+}
+
+section.intro .contentBox {
+    width: 60%;
+}
+
+section.intro .flippedSquare {
+    width: 25vw;
+    height: 25vw;
+}
+
+section.about .aboutSocial {
+    width: 100%;
+    margin: 0;
+}
+
+section.about .aboutDescription > div {
+    width: 50%;
+}
+
+section.about .aboutDescription .descriptionText {
+    margin: 0;
+}
+
+section.first .contentBox div {
+    width: 50%;
+}
+
+section.first .contentBox div img {
+    width: 30%;
+}
+
+section.first .contentBox div h2 {
+    width: 65%;
+}
+
+section.fourth .headingLeft h2 {
+    margin: 0;
+}
+
+section.fourth .headingLeft .flippedSquare.green img {
+    width: 3rem;
+}
+
+section.fourth .heading .headingRight {
+    width: 50%;
+}
+
+section.fifth {
+    justify-content: space-between;
+}
+
+section.fifth .leftContent {
+    width: 40%;
+} 
+
+section.sixth .subscribePath .subscbribeStages .subscribeStage {
+    width: 20%;
+}
+
+section.sixth .subscribePath .subscbribeStages > img {
+    width: 3%;
+}
+
+section.nineth .valueCards div {
+    flex-direction: column;
+}
+
+section.nineth .valueCards div:first-child p,
+section.nineth .valueCards div:last-child p {
+    width: 100%;
+    display: block;
+}
+
+section.nineth .valueCards div h1 {
+    width: 80%;
+}
+
+section.nineth .valueCards > div > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

@@ -1,0 +1,2210 @@
+:root {
+    --lemon: #C2FF01;
+    --red: #D40033;
+}
+
+@font-face {
+    font-family: 'Uni Sans';
+    src: url('../assets/fonts/uni-sans.heavy-caps.otf');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    position: relative;
+    overflow-x: hidden;
+    width: 100%; 
+}
+
+body {
+    overflow-y: hidden;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+header .flippedSquare {
+    width: 25vw;
+    height: 13vw; 
+
+    background-image: url("../assets/svg/flippedGradientSquare.svg");
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+header .flippedSquare img {
+    position: absolute;
+    left: 5.6vw;
+    top: 1.5vw;
+    width: 6vw; 
+}
+
+button {
+    border-radius: 60px;
+    border: none; 
+    outline: none;  
+    cursor: pointer;
+    padding: 0 1.2rem;
+
+    transition-duration: 0.2s;
+}
+
+button:hover {
+    box-shadow: 0 0 4px rgba(0,0,0,0.3);
+}
+
+.headerButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25rem;
+    padding: 2rem 4rem;
+    position: relative;
+}
+
+button#moreInfo {
+    font-family: 'Source Sans Pro';
+    font-weight: 700;
+    font-size: 0.65em;
+    line-height: 428.2%; 
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    background: linear-gradient(360deg, #1D737E -74.42%, #4FB9C7 154.17%);
+    padding: 0 1.2rem;
+    color: var(--lemon);
+}
+
+button#dropdownMenu {
+    border-radius: 0;
+    width: 20%;
+    background-color: transparent;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+}
+
+button#dropdownMenu div {
+    display: block;
+    height: 0.25rem;
+    border-radius: 3px;
+    pointer-events: none;
+}
+
+button#dropdownMenu div:first-child, button#dropdownMenu div:last-child {
+    width: 1rem;
+    background-color: #197081;
+    border: none;
+}
+
+button#dropdownMenu div:nth-child(1), button#dropdownMenu div:nth-child(2)  {
+    margin-bottom: 0.25rem;
+}
+
+button#dropdownMenu div:last-child {
+    margin-left: 1rem;
+}
+
+button#dropdownMenu div:nth-child(2) {
+    background-color: black;
+    width: 2rem;
+}
+
+/* DROPDOWN */
+
+.dropdownMenu {
+    position: absolute;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    right: 2rem;
+    background-color: white;
+    padding: 1rem 2rem;
+    z-index: 10;
+    top: 6vw;
+
+    border-radius: 10px;
+    
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+    
+    display: none;
+}
+
+.dropdownMenu > div::-webkit-scrollbar {
+    display: none;
+}
+
+.dropdownMenu h2 {
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.dropdownMenu > div {
+    overflow-y: scroll;
+    height: 12rem;
+    
+
+}
+
+.dropdownMenu button.exit {
+    display: none;
+}
+
+.dropdownMenu div > button {
+    font-family: 'Oswald';
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 1rem 0.5rem;
+    margin: 0.5rem;
+    border-radius: 10px;
+    width: calc(100% - 1rem);
+    transition-duration: 0.2s;
+
+}
+
+.dropdownMenu button:hover {
+    box-shadow: 0 0 8px #111;
+}
+
+.dropdownMenu button:first-child, 
+.dropdownMenu button:nth-child(3),
+.dropdownMenu button:nth-child(5), 
+.dropdownMenu button:nth-child(7), 
+.dropdownMenu button:nth-child(9) { 
+    background-color: var(--lemon);
+}
+
+.dropdownMenu button:nth-child(2),
+.dropdownMenu button:nth-child(6),  
+.dropdownMenu button:nth-child(8),   
+.dropdownMenu button:nth-child(13) {  
+    background-color: black;
+    color: white;
+    opacity: 0.8;
+}
+
+.dropdownMenu button:nth-child(4) {
+    background: linear-gradient(59.46deg, #1D737E -67.96%, #4FB9C7 103.75%);
+    color: white;
+}
+
+.dropdownMenu button:nth-child(10) {
+    background-color: var(--red);
+    color: white;
+}
+ 
+.dropdownMenu button:nth-child(11),
+.dropdownMenu button:nth-child(12) {
+    background-color: black;
+    color: var(--lemon);
+}
+
+/* MODAL DE CONTATO */
+
+.contactModalProtector { 
+    display: none;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.75;
+    z-index: 20;
+}
+
+.contactModal {
+    display: none;
+
+    position: fixed;
+    left: 30%;
+    top: 20%;
+    
+    width: 40%;
+    height: 60%;
+    
+    overflow-y: auto;
+    
+    background: linear-gradient(220.36deg, rgba(25, 112, 129, 0.05) 0%, rgba(247, 247, 249, 0) 64.63%);
+    background-color: white;
+    
+    z-index: 21;
+    opacity: 1;
+    
+    padding: 3rem 2rem;
+    
+    border-radius: 20px;
+    
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+}
+
+.contactModal button.close {
+    display: block;
+    
+    border-radius: 0;
+    
+    width: 1.3rem;
+    height: 1.3rem;
+    
+    padding: 0;
+    
+    position: absolute; 
+    top: 1.5rem; 
+    right: 1.5rem;
+
+    background-color: transparent;
+    background-image: url("../assets/svg/close.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.contactModal button.close {
+    box-shadow: 0 0 0 #FFF;
+}
+
+.contactModal::-webkit-scrollbar {
+    display: none;
+}
+
+.contactModal button.close {
+    position: absolute;
+}
+
+.contactModal h2 {
+    font-family: 'Oswald';
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 155.5%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.contactModal h3 {
+    font-family: 'Oswald';
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 27px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.contactModal h3 span.highlight {
+    background-color: black;
+    padding: 0.2rem 0.4rem;
+    border-radius: 5px;
+} 
+
+.contactModal form fieldset {
+    margin: 1rem 0;
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactModal form .contactField {
+    width: 100%;
+    outline: none;
+    border: 1px solid #555;
+    padding: 0 0.5rem;
+    font-family: 'Fira Sans';
+    font-size: 15px;
+    line-height: 180%;
+
+    border-radius: 5px;
+
+    background-color: #FFF;
+} 
+
+.contactModal form fieldset label {
+    display: inline-block;
+    margin-bottom: 1rem;
+
+    width: fit-content;
+
+    font-family: 'Oswald';
+    font-weight: normal;
+    font-size: 15px;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    line-height: 150%;
+    background-color: black;
+    color: white;
+    padding: 0 0.5rem;
+}
+
+.contactModal form fieldset:nth-child(2) {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contactModal form fieldset .field {
+    width: 49%;
+}
+
+.contactModal fieldset textarea {
+    resize: none;
+}
+
+.contactModal button.lemon {
+    width: 70%;
+    margin: 2rem 15% 0;
+}
+
+.contactResponseModal {
+    display: none;
+    
+    position: fixed;
+    left: 35%;
+    vertical-align: middle;
+    
+    width: 30%;
+    height: fit-content;
+    
+    background-color: white;
+    
+    z-index: 30;
+    padding: 3rem 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 40px;
+}
+
+.contactResponseModal img {
+    width: 20%;
+}
+
+.contactResponseModal div {
+    margin: 1rem 0;
+}
+.contactResponseModal div > h3 {
+    font-family: 'Oswald';
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 155.5%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.contactResponseModal div > p {
+    font-family: 'Fira Sans';
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 180%;
+    text-align: center;
+}
+
+.contactResponseModal button.lemon {
+    width: 80%;
+}
+
+/* BOTÃO PARA VOLTAR AO TOPO */
+button.backToTheTop {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 50;
+
+    width: 3rem;
+    height: 3rem;
+
+    border-radius: 2rem;
+
+    padding: 1rem;
+    
+
+    cursor: pointer;
+    
+    background-color: black;
+    background-image: url("../assets/svg/upArrow.svg");
+    background-size: 40% 40%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition-duration: 0.2s;
+    opacity: 0.75;
+    
+    display: none;
+}
+
+button.backToTheTop:hover {
+    box-shadow: 0 0 4px #000;
+    opacity: 1;
+}
+
+/* MAIN */
+/* SECTION.INTRO */
+
+section {
+    width: 100%; 
+    padding: 0 20%;
+    margin-bottom: 6rem;
+}
+
+section.intro {
+    background: linear-gradient(220.36deg, rgba(25, 112, 129, 0.32) 0%, rgba(247, 247, 249, 0) 64.63%);
+    margin-top: -30%;
+    padding-top: 30%;
+    z-index: 1;
+}
+
+.contentBox {
+    z-index: 1;
+}
+
+section.intro .contentBox {
+    margin-bottom: 8rem;
+    position: relative;
+    width: 48%;
+}
+
+h1 {
+    font-family: 'Oswald';
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 155.5%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    padding-bottom: 1rem;
+}
+
+p {
+    font-family: 'Fira Sans';
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 180%;
+}
+
+section.intro .contentBox p {
+    width: 90%;
+}
+
+section.intro h1 span.emph {
+    background-color: black;
+    color: var(--lemon);
+    padding: 0 1.5rem;
+    border-radius: 10px;
+    display: block;
+    width: fit-content;
+}
+
+section.intro .flippedSquare {
+    position: absolute;
+
+    width: 30vw;
+    height: 30vw;
+    min-width: 150px;
+    min-height: 150px;
+    max-width: 450px;
+    max-height: 450px;
+
+    border-radius: 57px; 
+
+    transform: rotate(-45deg);
+}
+
+section.intro .flippedSquare.blur {
+    background: linear-gradient(317.52deg, #FFFFFF 4.85%, rgba(255, 255, 255, 0) 74.04%);
+    right: 0;
+    top: 15rem;
+    
+    width: 50vw;
+    height: 50vw;
+    max-width: 750px;
+    max-height: 750px;
+}
+
+section.intro .flippedSquare.white {
+    background-color: white; 
+    right: 20%;
+}
+
+section.intro .flippedSquare.grad {
+    background: linear-gradient(180deg, #197081 0%, rgba(25, 112, 129, 0) 100%);
+    right: 17%;
+    border-radius: 57px; 
+}
+
+section.intro .flippedSquare.greenBorder {    
+    background: transparent;
+    border: 1px solid var(--lemon);
+    right: 11%;
+}
+
+section.intro .leadingImg {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    right: 14%;
+
+    overflow: hidden;
+}
+
+section.intro .leadingImg img {
+    transform: rotate(45deg);
+    height: 42vw;
+}
+
+button.lemon {
+    font-family: 'Source Sans Pro';
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 428.2%;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    background-color: var(--lemon);
+}
+
+
+section.intro .contentBox button:last-child {
+    width: 80%;
+    margin-top: 5rem;
+}
+
+/* SECTION.ABOUT */
+section.about {
+    display: block;
+}
+
+section.about .flippedSquareSet {
+    width: 15%;
+    height: fit-content;
+    position: absolute;
+    left: 0;
+    margin-top: -28rem;
+}
+
+section.about .flippedSquareSet .flippedSquare.borderBlue {
+    width: 15rem;
+    height: 30rem;
+
+    background-image: url("../assets/svg/flippedBlueBorderSquare.svg");
+    background-color: transparent;
+    background-size: contain;
+    background-blend-mode: exclusion;
+    background-repeat: no-repeat;
+
+    position: relative;
+}
+
+section.about .flippedSquareSet .flippedSquare.borderBlue:nth-child(2) {
+    top: -24rem;
+} 
+
+section.about .flippedSquareSet .flippedSquare.green.tiny {
+    width: 8rem;
+    height: 8rem;
+
+    background-image: url("../assets/svg/flippedLemonSquare.svg");
+    background-color: transparent;
+    background-size: contain;
+    background-blend-mode: exclusion;
+    background-repeat: no-repeat;
+
+    position: relative;
+    top: -42rem;
+    left: 3rem;
+}
+
+section.about .flippedSquare.green.large {
+    position: absolute; 
+    left: 0;
+    margin-top: -3rem;
+    margin-left: calc(20% - 10rem); 
+
+    width: 20rem;
+    height: 20rem;
+
+    background-image: url("../assets/svg/flippedLemonSquare.svg");
+    background-color: transparent;
+    background-size: contain;
+    background-blend-mode: exclusion;
+    background-repeat: no-repeat;
+}
+
+section.about .leftTitle {
+    font-family: 'Uni Sans';
+    font-weight: 900;
+    font-size: 63.0865px;
+    line-height: 138px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    color: #F7F7F9;
+
+    width: 0;
+    word-wrap: break-word;
+
+    position: absolute; 
+    left: 5%;
+}
+
+section.about .aboutDescription {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+section.about .aboutDescription > div {
+    width: 40%;
+    max-width: 450px;
+    margin-right: 5rem;
+}
+
+section.about .aboutDescription > div > img {
+    width: 100%;
+    max-width: 450px;
+}
+
+section.about .aboutSocial {
+    width: 60%;
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    padding: 1rem;
+    margin-left: 20%; 
+}
+
+section.about .aboutSocial a {
+    background: linear-gradient(59.46deg, #1D737E -67.96%, #4FB9C7 103.75%);
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3rem;
+    transition-duration: 0.3s;
+    position: relative;
+    z-index: 20;
+}
+
+section.about .aboutSocial a:hover {
+    box-shadow: 0 0 3px black;
+}
+
+section.about .aboutSocial a img {
+    position: absolute;
+    width: 1.2rem;
+}
+
+section.about .aboutSocial a img[src = "assets/svg/fb.svg"] {
+    width: 0.8rem;
+}
+
+section.about .aboutDescription .descriptionText {
+    width: 50%;
+    max-width: 700px;
+}
+
+section.about .aboutDescription .descriptionText p {
+    width: 100%;
+}
+
+h2 {
+    font-family: 'Oswald';
+    font-weight: 200;
+    font-size: 25px;
+    line-height: 37px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.descriptionText h3 {
+    font-family: 'Oswald';
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    
+    margin-bottom: 2rem;
+
+}
+
+.descriptionText p:last-child {
+    margin-top: 1rem;
+}
+
+/* SECTION.FIRST */
+section.first {
+    background-color: black;
+    background-image: url("../assets/png/bgImage.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-blend-mode: exclusion;
+
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+section.first .flippedSquare.green.tiny {
+    width: 8rem;
+    height: 8rem;
+
+    background-image: url("../assets/svg/flippedLemonSquare.svg");
+    background-color: transparent;
+    background-size: contain;
+    background-blend-mode: exclusion;
+    background-repeat: no-repeat;
+
+    position: relative;
+    margin-top: -8rem;
+
+    margin-left: 120%;
+}
+
+section.first .contentBox {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+
+section.first .contentBox div {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section.first .contentBox div h2 {
+    font-family: 'Oswald';
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 155.5%;
+    
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #FFF;
+
+    width: 50%;
+}
+
+section.first .contentBox div img {
+    width: 40%;
+}
+
+
+section.first .contentBox .infoDescription {
+    color: #FFF;
+    width: 50%;
+}
+
+span.highlight {
+    color: var(--lemon);
+}  
+
+/* SECTION.SECOND */
+section.second {
+    padding-top: 3rem; 
+    padding-bottom: 3rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.second div {
+    width: 55%;
+}
+
+section.second div p {
+    width: 100%;
+}
+
+section.second div p:last-child {
+    font-weight: bold;
+    margin-top: 1.5rem;
+} 
+
+
+section.second div:last-child {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+}
+
+section.second div h2 {
+    font-weight: bold;
+    text-align: right;
+    width: 50%;
+    margin: 0;
+}
+
+section.second img {
+    width: 40%;
+}
+
+/* SECTION.THIRD */
+section.third {
+    padding: 0;
+    display: flex;
+}
+
+section.third .leftBlue {
+    width: 50%;
+    background: linear-gradient(59.46deg, #1D737E -67.96%, #4FB9C7 103.75%);
+    display: flex;
+    justify-content: space-around;
+    align-items:flex-start;
+    padding: 4rem 0;
+}
+
+section.third .flippedSquareSet {
+    position: relative;
+    height: 100%;
+    left: 0;
+    width: 0;
+    overflow-x: visible;
+    white-space: nowrap;
+}
+
+section.third .flippedSquareSet .flippedSquare.blueBorder {
+    position: relative;
+    width: 13rem;
+    height: 23.5rem;
+    top: calc(50% - 11.75rem);
+    left: -7.75rem;
+
+    background-image: url("../assets/svg/flippedGradSquare.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+}
+
+section.third .flippedSquare.blueBorder:nth-child(2) {
+    margin-left: -8rem;
+}
+
+
+section.third .leftBlue .infoDescription {
+    width: 70%;
+    color: white;
+    display: inline-block;
+    margin-left: 8%;
+}
+
+section.third .leftBlue h2, 
+section.third .rightBlack h2:first-child {
+    font-family: 'Oswald';
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 155.5%;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    
+    color: white;
+    width: 60%;
+    margin-bottom: 4rem;
+}
+
+section.third .leftBlue .infoDescription p {
+    margin-top: 2rem;
+    width: 70%;
+}
+
+section.third .leftBlue .infoDescription span.highlight {
+    color: var(--lemon);
+}
+
+section.third .rightBlack {
+    width: 50%;
+    background-color: black;
+    padding: 4rem 6rem;
+}
+
+section.third .rightBlack h2:first-child {
+    margin-left: 10rem;
+}
+
+section.third .rightBlack .period {
+    display: flex;
+    align-items: center;
+    margin: 4rem 0;
+}
+
+section.third .rightBlack .period .periodMark,
+section.third .rightBlack .period > img {
+    margin-right: 2rem;
+    z-index: 1;
+    
+    display: flex;
+    align-items: center;
+} 
+
+section.third .rightBlack .period .periodMark img {
+    position: relative;
+    height: 1rem;
+}
+
+section.third .rightBlack .period .periodMark img[src = "assets/svg/blackEllipse.svg"] {
+    height: 1.5rem;
+    left: -1.25rem;
+}
+
+
+section.third .rightBlack .period h2 {
+    color: var(--lemon);   
+
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    margin-right: 4rem;
+    margin-bottom: 0;
+}
+
+section.third .rightBlack .period div p {
+    width: 100%;
+    color: #FFF;
+}
+
+section.third .rightBlack .period div h3 {
+    font-family: 'Oswald';
+    font-weight: bold;
+    letter-spacing: 0.005em;
+    color: var(--lemon);
+}
+
+section.third .rightBlack .lazer {
+    position: relative;
+    width: 0.3rem; 
+    height: 100%;
+    left: 0.4rem;
+    background: linear-gradient(180deg, rgba(162, 196, 58, 0) -1.03%, #A2C43A 100%);
+    z-index: 0;
+    top: calc(-100% + 4rem);
+}
+
+/* SECTION.FOURTHINFO */
+section.fourth {
+    background-color: white;
+}
+
+section.fourth .heading {
+    display: flex;
+}
+
+section.fourth .heading .headingLeft {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+section.fourth .heading .headingLeft .flippedSquare.green {
+    background-color: var(--lemon);
+    padding: 2rem;
+    border-radius: 34px;
+    transform: rotate(45deg);
+}
+
+section.fourth .heading .headingLeft .flippedSquare.green img {
+    transform: rotate(-45deg);
+}
+
+section.fourth .heading .headingLeft h2 {
+    font-weight: bold;
+
+    padding: 1rem;
+    width: 55%;
+}
+
+section.fourth .heading .headingRight {
+    display: inline-block;
+    width: 40%;
+}
+
+section.fourth .corpse h3 {
+    font-family: 'Oswald';
+    text-align: center;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin: 5rem 0 5rem;
+}
+
+section.fourth .corpse button.scroll {
+    display: none;
+}
+
+
+section.fourth .corpse > div {
+    display: flex;
+    align-items: center;
+}
+
+section.fourth .corpse .items {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+section.fourth .corpse .items .item .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12rem;
+    height: 12rem;
+}
+
+section.fourth .corpse .items .item .icon img {
+    position: absolute;
+    width: 5rem;
+}
+
+section.fourth .corpse .items .item .icon img:first-child {
+    width: 10rem;
+}
+
+section.fourth .corpse .items .item .icon img:nth-child(2) {
+    height: 5rem;
+}
+
+section.fourth .corpse .items .item p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+}
+
+section.fourth .corpse .items .item small {
+    font-family: 'Fira Sans';
+    font-size: 15px;
+    line-height: 180%;
+    text-align: center;
+    color: #197081;
+
+    display: block;
+    width: 50%;
+    margin-left: 25%;
+}
+
+/* SECTION.FIFTH */
+section.fifth {
+    background-color: black;
+    background-image: url("../assets/png/bgImage1.png");
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-blend-mode: exclusion;
+
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+section.fifth .leftContent {
+    width: 30%;
+}
+
+section.fifth .leftContent h2 {
+    font-weight: bold;
+    line-height: 37px;
+
+    color: #FFF;
+}
+
+section.fifth .leftContent p {
+    line-height: 136.5%;
+    color: #FFF;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+
+section.fifth button.lemon {
+    padding: 0 4rem;
+}
+
+/* SECTION.SIXTH */
+section.sixth {
+    background-color: transparent;
+}
+
+section.sixth .flippedSquareSet {
+    width: 15%;
+    height: fit-content;
+    position: absolute;
+    left: 0;
+    margin-top: -12rem;
+}
+
+section.sixth .flippedSquareSet .flippedSquare.borderBlue {
+    width: 100%;
+    height: 42rem;
+
+    background-image: url("../assets/svg/flippedBlueBorderSquare.svg");
+    background-color: transparent;
+    background-size: 100% 100%;
+    background-blend-mode: exclusion;
+    background-repeat: no-repeat;
+
+    position: relative;
+
+    margin-top: -8rem;
+}
+
+section.sixth .flippedSquareSet .flippedSquare.borderBlue:nth-child(2) {
+    margin-top: -34rem;
+} 
+
+section.sixth .flippedSquareSet .flippedSquare.green.tiny {
+    width: 8rem;
+    height: 8rem;
+
+    background-image: url("../assets/svg/flippedLemonSquare.svg");
+    background-color: transparent;
+    background-size: contain;
+    background-blend-mode: exclusion;
+    background-repeat: no-repeat;
+
+    position: relative;
+    top: -24rem;
+    left: 40%;
+}
+
+section.sixth h2 {
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 4rem;
+} 
+
+section.sixth .subscribePath {
+    width: 100%;
+    display: inline-block;
+}
+
+section.sixth .subscribePath button.scroll {
+    display: none;
+}
+
+
+section.sixth .subscribePath div .subscribeStages {
+    width: 100%;
+    font-size: 0;
+}
+
+section.sixth .subscribePath div .subscribeStages .subscribeStage {
+    width: 18%;
+    height: 10rem;
+    display: inline-block;
+    text-align: center;
+    
+    vertical-align: top;
+    margin-bottom: 2rem;
+}
+
+section.sixth .subscribePath div .subscribeStages > img {
+    margin: 2rem 1% 0;
+    width: 5%;
+} 
+
+section.sixth .subscribePath div .subscribeStages .subscribeStage strong {
+    font-family: 'Uni Sans';
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 30px;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+
+    display: block;
+    background-image: url("../assets/svg/flippedLemonSquare.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    padding: 1rem;
+
+    margin-bottom: 2rem;
+}
+
+section.sixth .subscribePath div .subscribeStages .subscribeStage p {
+    line-height: 119%;
+    text-align: center;
+    width: 100%;
+}
+
+section.sixth .subscribePath div .subscribeStages img:nth-child(8) {
+    display: none;
+}
+
+section.sixth .subscribePath div .subscribeStages div:last-child {
+    background: linear-gradient(59.46deg, #1D737E -67.96%, #4FB9C7 103.75%);
+    display: inline-flex;
+    border-radius: 14px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 7%;
+}
+
+section.sixth .subscribePath div .subscribeStages div:last-child button.lemon {
+    z-index: 5;
+}
+
+section.sixth .subscribePath div .subscribeStages div:last-child img {
+    position: absolute;
+    margin-right: -3%;
+    height: 8rem;
+    z-index: 0;
+}
+
+
+section.sixth .subscribePath div .subscribeStages div:last-child img:nth-child(2) {
+    margin-right: -6%;
+}
+
+/* SECTION.SEVENTHINFO */
+section.seventh {
+    padding: 4rem 0;
+    display: flex;
+}
+
+section.seventh .flippedSquareSet {
+    width: 15%;
+    height: fit-content;
+    position: absolute;
+    right: 0;
+}
+
+section.seventh .flippedSquareSet .flippedSquare.green.tiny {
+    width: 8rem;
+    height: 8rem;
+    background-image: url("../assets/svg/flippedLemonSquare.svg");
+    background-size: cover;
+    position: relative;
+    margin-top: -4rem;
+    margin-left: calc(100% - 8rem);
+}
+
+section.seventh > .flippedSquareSet .flippedSquare.borderBlue {
+    position: relative;
+    right: 0;
+    width: 100%; 
+    height: 42rem;
+    margin-top: -34rem;
+    background-image: url("../assets/svg/flippedBlueBorderSquare1.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+section.seventh .leftBlack {
+    width: 50%;
+    background-color: black;
+    padding: 5rem 0 3rem 0;
+}
+
+section.seventh .leftBlack > h2 {
+    font-family: 'Oswald';
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 37px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: #FFF;
+
+    width: calc(60% - 5rem);
+    margin-left: 40%;
+}
+
+section.seventh .leftBlack .subsection {
+    margin-top: 4rem;
+    padding-left: 40%;
+} 
+
+section.seventh .subsection h3 {
+    font-family: 'Oswald';
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    color: var(--lemon);
+
+    margin-bottom: 3rem;
+
+    width: 70%;
+}
+
+section.seventh .subsection p,
+section.seventh .subsection ul li {
+    font-family: 'Fira Sans';
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 136.5%;
+
+    color: #FFF;
+
+    width: 85%;
+
+    list-style: none;
+
+    padding: 1rem 0;
+}
+
+section.seventh .subsection ul {
+    margin-top: 3rem;
+}
+
+section.seventh .subsection ul li img {
+    position: absolute;
+    margin-left: -3rem;
+}
+
+section.seventh .subsection ul li {
+    margin-left: 3rem;
+}
+
+section.seventh .leftBlack .subsection:nth-child(2) ul li:last-child {
+    color: var(--lemon);
+}
+
+section.seventh .leftBlack .subsection:nth-child(3) {
+    background-clip: border-box;
+    background: linear-gradient(270deg, #171717 0%, rgba(23, 23, 23, 0) 100%);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    display: flex;
+    align-items: center;
+}
+
+section.seventh .leftBlack .subsection:nth-child(3) .flippedSquareSet {
+    position: absolute;
+    left: -5rem;
+    
+    width: 24rem;
+    height: 24rem;
+    
+    background-image: url("../assets/svg/doubleBlueBorderSquare.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    vertical-align: top;
+    z-index: 1;
+}
+
+section.seventh .leftBlack .subsection:nth-child(3) .content {
+    z-index: 3;
+}
+
+section.seventh .rightBlue {
+    width: 50%;
+    background: linear-gradient(59.46deg, #1D737E -67.96%, #4FB9C7 103.75%);
+
+    padding: 5rem;
+    padding-right: 0;
+}
+
+section.seventh .rightBlue > h2 {
+    font-weight: bold;
+    color: #FFF;
+    width: 60%;
+}
+
+section.seventh .rightBlue .subsection {
+    margin-top: 4rem;
+    padding-right: calc(40% - 5rem);
+}
+
+section.seventh .rightBlue .subsection:nth-child(3) {
+    margin: 7rem 0;
+}
+
+section.seventh .rightBlue .subsection:last-child button {
+    margin-top: 4rem;
+}
+
+section.seventh .rightBlue .subsection button {
+    padding: 0 4rem;
+}
+/* SECTION.EIGTH */
+
+section.eigth .flippedSquareSet {
+    width: 15%;
+    height: fit-content;
+    position: absolute;
+    left: 0;
+    margin-top: -8rem;
+}
+
+section.eigth .flippedSquareSet .flippedSquare.borderBlue {
+    width: 15rem;
+    height: 30rem;
+
+    background-image: url("../assets/svg/flippedBlueBorderSquare.svg");
+    background-color: transparent;
+    background-size: contain;
+    background-blend-mode: exclusion;
+    background-repeat: no-repeat;
+
+    position: relative;
+}
+
+section.eigth .flippedSquareSet .flippedSquare.borderBlue:nth-child(2) {
+    top: -24rem;
+} 
+
+section.eigth .flippedSquareSet .flippedSquare.green.tiny {
+    width: 8rem;
+    height: 8rem;
+
+    background-image: url("../assets/svg/flippedLemonSquare.svg");
+    background-color: transparent;
+    background-size: contain;
+    background-blend-mode: exclusion;
+    background-repeat: no-repeat;
+
+    position: relative;
+    top: -42rem;
+    left: 3rem;
+}
+
+section.eigth .icon {
+    background-image: url("../assets/svg/flippedLemonSquare.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    padding: 5rem;
+    top: -12rem;
+    left: calc(50% - 9rem);
+}
+
+section.eigth .icon img {
+    width: 8rem;
+}
+
+section.eigth .intro h2 {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+section.eigth .intro h3 {
+    font-family: 'Oswald';
+    text-align: center;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+section.eigth .intro h4 {
+    font-family: 'Fira Sans';
+    font-style: italic;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 136.5%;
+    text-align: center;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+}
+
+section.eigth .intro h4 span.bigQuote {
+    font-family: 'Unkempt';
+    font-weight: normal;
+    font-size: 100px;
+    line-height: 122px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    
+    color: #197081;
+}
+
+section.eigth .intro h4 span.bigQuote:first-child {
+    margin-right: 2rem;
+}
+
+section.eigth .intro h4 span.bigQuote:last-child {
+    margin-left: 2rem;
+}
+
+section.eigth .intro h4 span.quotedText {
+    margin-top: 1rem;
+}
+
+section.eigth > p {
+    font-family: 'Fira Sans';
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 136.5%;
+    /* or 27px */
+
+    text-align: center;
+    width: 100%;
+
+    margin: 6rem 0;
+}
+
+section.eigth div > button.scroll {
+    display: none;
+}
+
+section.eigth .formations {
+    display: flex;
+    width: 100%;
+    align-items:flex-start;
+    justify-content: space-around;
+}
+
+section.eigth .formations > div {
+    width: 16%;
+    vertical-align: top;
+}
+
+section.eigth .formations > div img {
+    width: 70%;
+    margin: 0 15%;
+    margin-bottom: 2rem;
+}
+
+section.eigth .formations > div p {
+    font-weight: 500;
+    line-height: 18px;
+    text-align: center;
+
+    display: inline-block;
+    width: 100%;
+    min-height: 6rem;
+}
+
+section.eigth .formations > div small {
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 180%;
+    text-align: center;
+
+    display: block;
+    width: 100%;
+    color: #197081;
+}
+
+section.eigth .formations > div h2 {
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+}
+
+/* SECTION.NINETH */
+section.nineth {
+    background: linear-gradient(180deg, rgba(25, 112, 129, 0.05) -3.79%, rgba(247, 247, 249, 0) 32.02%);
+
+    padding-top: 17rem;
+    margin-top: -15rem;
+}
+
+section.nineth .valueCards {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section.nineth .valueCards > div {
+    width: 49.5%;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    
+    padding: 1.5rem;
+    min-height: 11rem;
+}
+
+section.nineth .valueCards > div h1 {
+    font-size: 34px;
+    line-height: 60px;
+
+    display: inline-block;
+    text-align: right;
+    line-height: 60px;
+    padding: 0;
+    width: 50%;
+} 
+
+section.nineth .valueCards > div:first-child {
+    background-color: var(--red);
+    color: #FFF;
+    justify-content: space-between;
+}
+
+section.nineth .valueCards > div:first-child p {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    width: 50%;
+}
+
+section.nineth .valueCards > div:nth-child(2) {
+    border: 2px var(--red) solid;
+    justify-content: space-around;
+}
+
+section.nineth .valueCards > div:nth-child(2) div {
+    display: flex;
+    align-items: center;
+}
+
+section.nineth .valueCards > div:nth-child(2) small {
+    font-family: 'Fira Sans';
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 136.5%;
+} 
+
+section.nineth .valueCards > div:nth-child(2) h1 {
+    color: var(--red);
+    margin: 0 1rem;
+    text-align: center;
+} 
+
+section.nineth .valueCards > div:nth-child(2) p {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 136.5%;
+    width: 40%;
+}
+
+section.nineth .descriptions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5rem;
+    align-items: flex-end;
+}
+
+section.nineth .descriptions > div {
+    width: 48%;
+}
+
+section.nineth .descriptions > div h2:first-child {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 30px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+section.nineth .descriptions > div p {
+    margin: 2.6rem 0;
+    width: 100%;
+}
+
+section.nineth .descriptions > div h2 {
+    font-family: 'Fira Sans';
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 136.5%;
+    text-transform: none;
+}
+
+section.nineth .descriptions > div:nth-child(2) strong {
+    font-family: 'Fira Sans';
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 136.5%;
+
+    margin-left: 3rem;
+    display: block;
+}
+
+section.nineth .descriptions > div:nth-child(2) ul {
+    margin-top: 2rem;
+}
+
+section.nineth .descriptions > div:nth-child(2) ul li img {
+    margin-right: 1.5rem;
+}
+
+section.nineth .descriptions > div:nth-child(2) ul li {
+    font-family: 'Fira Sans';
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 136.5%;
+
+    width: 85%;
+
+    list-style: none;
+
+    padding: 1rem 0;
+
+    display: flex;
+}
+
+section.nineth .descriptions > div:nth-child(2) h2 {
+    margin-top: 2rem;   
+    margin-left: 3rem;
+}
+
+section.nineth button {
+    margin-top: 8rem;
+    width: 25em;
+    margin-left: calc(50% - 12.5em);
+}
+
+/* SECTION.TENTH */
+section.tenth {
+    display: flex;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+section.tenth .flippedSquareSet {
+    width: 12%;
+    height: fit-content;
+    position: absolute;
+    right: 0;
+}
+
+section.tenth .flippedSquareSet .flippedSquare.green.tiny {
+    width: 8rem;
+    height: 8rem;
+    background-image: url("../assets/svg/flippedLemonSquare.svg");
+    background-size: cover;
+    position: relative;
+    margin-top: -4rem;
+    margin-left: calc(100% - 8rem);
+}
+
+section.tenth > .flippedSquareSet .flippedSquare.borderBlue {
+    width: 100%; 
+    height: 40rem;
+    margin-top: -32rem;
+    background-image: url("../assets/svg/flippedBlueBorderSquare1.svg");
+    background-size: cover;
+
+}
+
+section.tenth .leftDark, 
+section.tenth .rightLight {
+    width: 50%;
+    padding: 5rem 0;
+}
+
+section.tenth .leftDark {
+    background-color: #171717;
+    padding-left: 20%;
+}
+
+section.tenth .leftDark > h2,
+section.tenth .rightLight > h2 {
+    font-weight: bold;
+    color: #FFF;
+}
+
+section.tenth .leftDark > h3,
+section.tenth .rightLight > h3 {
+    font-family: 'Oswald';
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    color: var(--lemon);
+
+    margin-top: 2rem;
+    width: 90%;
+}
+
+section.tenth .leftDark .depositions {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+
+section.tenth .leftDark .videos {
+    display: inline-block;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    white-space: nowrap;
+    width: 80%;
+} 
+
+section.tenth .leftDark .videos .video {
+    width: fit-content;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    
+    position: relative;
+
+    font-size: 15px;
+    color: white;
+}
+
+section.tenth .leftDark .videos .video > video {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    outline: none;
+}
+
+section.tenth .leftDark .videos .video:first-child {
+    margin-top: 0;
+}
+
+section.tenth .leftDark .videos .video:last-child {
+    margin-bottom: 0;
+}
+
+section.tenth .leftDark .videos .video div {
+    background-color: black; 
+    position: absolute;
+    padding: 1rem;
+
+    width: fit-content;
+    height: fit-content;
+
+    border-radius: 2.5rem;
+
+    cursor: pointer;
+
+    transition-duration: 0.2s;
+    opacity: 0.75;
+}
+
+section.tenth .leftDark .videos .video div:hover {
+    opacity: 1;
+}
+
+section.tenth .leftDark .videos .video div img {
+    width: 1.5rem;
+    pointer-events: none;
+}
+
+section.tenth .leftDark .controls {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+section.tenth .leftDark .controls button {
+    border-radius: 0;
+    padding: 1rem;   
+}
+
+section.tenth .leftDark .controls button:first-child {
+    background: linear-gradient(59.46deg, #1D737E -67.96%, #4FB9C7 103.75%);
+} 
+
+section.tenth .leftDark .controls button:last-child {
+    background-color: var(--lemon);
+}
+
+section.tenth .rightLight {
+    background: linear-gradient(220.36deg, rgba(25, 112, 129, 0.1) 0%, rgba(247, 247, 249, 0) 64.63%);
+    padding-right: 20%;
+}
+
+section.tenth .rightLight > h2,
+section.tenth .rightLight > h3 {
+    color: #000;
+    z-index: 2;
+
+    margin-left: 5rem;
+    width: 100%;
+}
+
+section.tenth .rightLight .customers {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5rem;
+    margin-top: 5rem;
+
+    width: 100%;
+}
+
+section.tenth .rightLight .customers .customersCol {
+    width: 30%;
+} 
+
+section.tenth .rightLight .customers .customersCol:nth-child(2) {
+    margin-top: 4rem;
+}
+
+
+section.tenth .rightLight .customers .customersCol div {
+    background-color: #FFF;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+
+    height: 10rem;
+    width: 100%;
+
+    padding: 0 1rem;
+
+    display: flex;
+
+    margin-bottom: 2rem;
+}
+
+section.tenth .rightLight .customers .customersCol div img {
+    width: 100%;
+    height: min-content;
+    align-self: center;
+}
+
+/* SECTION.ELEVENTH */
+
+section.eleventh {
+    background-color:black;
+    padding-bottom: 6rem;
+    margin-bottom: 0;
+}
+
+section.eleventh .icon {
+    background-image: url("../assets/svg/flippedLemonSquare.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: fit-content;
+
+    padding: 4rem;
+
+    position: relative;
+    top: -6.5rem;
+    left: calc(50% - 6.5rem);
+}
+
+section.eleventh .icon img {
+    width: 5rem;
+}
+
+section.eleventh .flippedSquareSet {
+    background-image: url("../assets/svg/doubleBlueBorderSquare.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 25%;
+    height: 25rem;
+    
+    position: absolute; 
+    display: inline-block;
+    margin-left: calc(-15% - 2rem);
+    margin-top: -13rem;
+    /* top: -13rem; */
+}
+
+section.eleventh > h2 {
+    font-weight: bold;
+    line-height: 155.5%;
+    text-align: center;
+
+    color: #FFF;
+}
+
+section.eleventh > p {
+    line-height: 136.5%;
+
+    text-align: center;
+
+    color: #FFFFFF;
+
+    margin-top: 1rem;
+    width: 60%;
+    margin-left: 20%;
+}
+
+section.eleventh > h3 {
+    font-family: 'Oswald';
+    font-weight: bold;
+    line-height: 27px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-align: center;
+
+    color: var(--lemon);
+    
+    width: 100%;
+    margin-top: 3rem;
+}
+
+section.eleventh .moreInfo {
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 3rem;
+}
+
+section.eleventh .moreInfo .icons {
+    width: 100%;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+section.eleventh .moreInfo .description {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    margin-top: 2rem;
+} 
+
+section.eleventh .moreInfo .description div {
+    width: 48%;
+
+    padding: 2rem;
+
+    border-radius: 10px;
+    align-self: stretch;
+
+    display: flex;
+    align-items: center;
+}
+
+section.eleventh .moreInfo .description div p {
+    line-height: 136.5%;
+    text-align: center;
+
+    width: 100%;
+}
+
+section.eleventh .moreInfo .description div:first-child {
+    background-color: var(--lemon);
+} 
+
+section.eleventh .moreInfo .description div:last-child {
+    background-color: var(--red);
+    color: #FFF;
+}
+
+/* SECTION.TWELTFH */
+section.twelfth {
+    background: linear-gradient(0, #000 10%, rgba(23, 23, 23, 1) 100%);
+    height: fit-content;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    margin-bottom: 0;
+    margin-top: -1%;
+}
+
+section.twelfth h3 {
+    font-family: 'Oswald';
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    color: #FFF;
+}
+
+section.twelfth .video  {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+section.twelfth .video iframe {
+    margin-top: 2rem;
+    width: 48vw;
+    height: 27vw;
+} 
+
+section.twelfth .flippedSquareSet {
+    background-image: url("../assets/svg/doubleBlueBorderSquare.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 25%;
+    height: 25rem;
+    
+    position: absolute;
+    display: inline-block;
+    transform: rotate(180deg);
+    right: 0;
+    margin-top: -27vw;
+
+    /* top: -13rem; */
+}
+
+/* FOOTER */
+footer {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2rem 15% 6rem;
+    margin-top: -1%;
+}
+
+footer .copyrightContent {
+    width: 50%;
+}
+
+footer .copyrightContent small {
+    font-family: 'Fira Sans';
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 160%;
+    text-align: center;
+    color: white;
+    display: block;
+}
+
+
+footer .copyrightContent small:last-child {
+    opacity: 0.5;
+}
+
+footer .developerLogo {
+    display: flex;
+    align-items: center;
+}
+
+footer .developerLogo small {
+    font-family: 'Poppins';
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 19px;
+    text-align: center;
+
+    margin-right: 1rem;
+
+    color: #FFFFFF;
+}
