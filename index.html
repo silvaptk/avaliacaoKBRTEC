@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang = "pt-BR">
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content = "IE = edge">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <title>Teste de estágio front-end ─ KBRTEC</title>
+
+        <!-- Folhas de estilo -->
+        <link rel ="stylesheet" href = "css/main.css">
+        <link rel = "stylesheet" media = "(max-width: 1600px)" href = "css/responsive1600.css">
+        <link rel = "stylesheet" media = "(max-width: 1280px)" href = "css/responsive1280.css">
+        <link rel = "stylesheet" media = "(max-width: 1080px)" href = "css/responsive1080.css">
+        <link rel = "stylesheet" media = "(max-width: 768px)" href = "css/responsive768.css">
+        <link rel = "stylesheet" media = "(max-width: 425px)" href = "css/responsive425.css">
+        
+        <!-- Fontes Google -->
+        <link rel = "preconnect" href = "https://fonts.gstatic.com">
+        <!-- Fonte Source Sans Pro -->
+        <link href = "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap" rel="stylesheet">
+        <!-- Fonte Fira Sans -->
+        <link href = "https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+        <!-- Fonte Oswald -->
+        <link href = "https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+        <!-- Fonte Unkempt -->
+        <link href = "https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+        <!-- Fonte Poppins -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+        <!-- Scripts -->
+        <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src = "js/dropdown.js"></script>
+        <script src = "js/scrolls.js"></script>
+        <script src = "js/videos.js"></script>
+        <script src = "js/contact.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class = "flippedSquare">
+                <img src = "assets/png/logo.png" alt = "Logo"> 
+            </div>
+            <div class = "headerButtons">
+                <button id = "moreInfo">Mais informações</button>
+                <button id = "dropdownMenu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </button>
+            </div>
+        </header>
+
+        <div class = "dropdownMenu">
+            <button class = "exit"></button>
+            <h2>Navegar</h2>
+            <div class = "buttons">
+                <button>MEU NOME É LOREM IPSUM</button>
+                <button>LOREM IPSUM<br>LOREM IPSUM TO MAKE<br>TYPE BOOK</button>
+                <button>SPECIMEN BOOK. IT HAS SURVIVED NOT ONLY FIVER</button>
+                <button>TYPE SPECIMEN BOOK IT HAS SURVIVE/<br>MECENTLY WITH DESKTOP PUBLISHING</button>
+                <button>CONTAINING LOREM IPSUM PASSAGES</button>
+                <button>VERSIONS OF LOREM IPSUMLETRASET SHEETS</button>
+                <button>ETAPAS DE INSCRIÇÃO</button>
+                <button>VERSIONS OF LOREM IPSUMLETRASET SHEETS/<br>VERSIONS OF LOREM IPSUMLETRASET SHEETS</button>
+                <button>INVESTIMENTO</button>
+                <button>LOREM IPSUM IS THEREFORE</button>
+                <button>DEPOIMENTOS/<br>LOREM IPSUM</button>
+                <button>LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE</button>
+                <button>LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE PRINTING AND TYPESETTING INDUSTRY. LOREM IPSUM:</button>
+            </div>
+        </div>
+        
+        <div class = "contactModalProtector"></div>
+
+        <div class = "contactModal">
+            <button class = "close"></button>
+            <h2>Mais informações</h2>
+            <h3>Para obter <span class="highlight">mais informações</span> preencha o formulário a seguir com os seus dados de contato e nos envie suas dúvidas</h3>
+            <form action = "">
+                <fieldset>
+                    <label for = "contactName">Nome*</label>
+                    <input 
+                        type = "text" 
+                        name = "name" 
+                        id = "contactName" 
+                        class = "contactField" 
+                        required
+                        title = "Digite seu nome completo" 
+                        placeholder = "DIgite seu nome completo aqui">
+                </fieldset>
+                <fieldset>
+                    <div class = "field">
+                        <label for = "contactPhone">Telefone/Celular*</label>
+                        <input 
+                            type = "tel" 
+                            name = "phone" 
+                            id = "contactPhone" 
+                            class = "contactField" 
+                            required  
+                            title = "Exemplos aceitos: (00) 9 0000-0000 ou (00) 0000-0000"
+                            placeholder = "(00) 9 0000-0000 ou (00) 0000-0000"> 
+                    </div>
+                    <div class = "field">
+                        <label for = "contactEmail">E-mail*</label>
+                        <input 
+                            type = "email" 
+                            name = "email" 
+                            id = "contactEmail" 
+                            class = "contactField" 
+                            required
+                            title = "Insira seu e-mail corretamente"
+                            placeholder = "host@dominio.com">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <label for = "contactMessage" class = "conactField">Mensagem</label>
+                    <textarea name = "message" id ="contactMessage" class = "contactField"></textarea>
+                </fieldset>
+                <button class = "lemon" type = "button" id = "submitMessage">Enviar</button>
+            </form>
+        </div>
+
+        <div class = "contactResponseModal">
+            <img src = "assets/svg/formation.svg" alt = "O formulário foi enviado.">
+            <div>
+                <h3>O formulário foi enviado com sucesso!</h3>
+                <p>Obrigado por entrar em contato.</p>
+            </div>
+            <button class = "lemon">Fechar</button>
+        </div>
+
+        <button class = "backToTheTop"></button>
+
+        <main>
+            <section class = "intro"> 
+                <div class = "flippedSquare blur"></div>
+                <div class = "flippedSquare white"></div>
+                <div class = "flippedSquare grad"></div>
+                <div class = "flippedSquare leadingImg"> 
+                    <img src = "assets/png/leadingImg.png" alt = "Imagem de demonstração">
+                </div>
+                <div class = "flippedSquare greenBorder"></div>
+                <div class = "contentBox"> 
+                    <h1>standard Lorem Ipsum <span class = "emph">Excepteur sint occaec</span> Lorem ipsum dolor sit ame onsectetur adipiscing elit dolore eu fugiat nulla pariatur!</h1>
+                    <p>popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <button class = "lemon">Lorem ipsum idolor</button>
+                </div>
+            </section> 
+            
+            <section class = "about"> 
+                <div class="flippedSquareSet">
+                    <div class = "flippedSquare borderBlue"></div>
+                    <div class = "flippedSquare borderBlue"></div>
+                    <div class = "flippedSquare green tiny"></div>
+                </div>
+                
+                <div class = "flippedSquare green large"></div>
+                <div class = "leftTitle">Sobre</div>
+
+                <div class = "aboutDescription"> 
+                    <div>
+                        <img src = "assets/png/aboutImage.png" alt = "Foto de alguém"> 
+                        <div class = "aboutSocial"> 
+                            <a href = "#"><img src = "assets/svg/fb.svg" alt = "Visitar página no Facebook"></a>
+                            <a href = "#"><img src = "assets/svg/it.svg" alt = ""></a>
+                            <a href = "#"><img src = "assets/svg/tt.svg" alt = "Visitar Twitter"></a>
+                        </div>
+                    </div>
+                    <div class = "descriptionText">
+                        <h2>Meu nome é <strong>lorem ipsum</strong></h2>
+                        <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                        </h3>
+                        <p>to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p>to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker </p>
+                        <p><strong>more recently with deskto</strong></p>
+                    </div>
+                </div>
+            </section> 
+
+            <section class = "first"> 
+                <div class = "flippedSquare green tiny"></div> 
+                <div class = "contentBox">
+                    <div>
+                        <img src="assets/svg/logo2.svg" alt = "Logo da empresa"> 
+                        <h2>
+                            Lorem Ipsum<br>
+                            Lorem Ipsum to make<br>
+                            type book
+                        </h2> 
+                    </div>
+                    <p class = "infoDescription"><span class = "highlight">Lorem Ipsum</span> to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p> 
+                </div>
+            </section>
+
+            <section class = "second">
+                <div>
+                    <p>to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of <strong>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</strong></p> 
+                    <p>publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </div> 
+                <div>
+                    <h2>specimen book. It has survived not only fiver</h2> 
+                    <img src = "assets/svg/businessMan.svg" alt = "Imagem de homem alcançando seu objetivo"> 
+                </div>
+            </section>
+
+            <section class = "third">
+                <div class = "leftBlue"> 
+                    <div class="flippedSquareSet">
+                        <div class = "flippedSquare blueBorder"></div>
+                        <div class = "flippedSquare blueBorder"></div>
+                    </div>
+                    <div class = "infoDescription">
+                        <h2>type specimen book. It has survive</h2> <!-- subtítulo -->
+                        <p><span class = "highlight">Lorem Ipsum dolor</span> to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        <p>publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div> 
+                </div> 
+
+                <div class = "rightBlack"> 
+                    <h2>Mecently with desktop publishing software like :</h2> 
+                    
+                    <div class = "period">
+                        <div class = "periodMark">
+                            <img src = "assets/svg/greenEllipse.svg">
+                            <img src = "assets/svg/blackEllipse.svg">
+                        </div>
+                        <img src = "assets/svg/greenDots.svg">
+                        <h2>2018</h2>
+                        <div class = "periodDescription">
+                            <p>Lorem ipsum dolor</p> 
+                            <h3>R$ 15.000,00</h3> 
+                        </div>
+                    </div> 
+
+                    <div class = "period">
+                        <div class = "periodMark">
+                            <img src = "assets/svg/greenEllipse.svg">
+                            <img src = "assets/svg/blackEllipse.svg">
+                        </div>
+                        <img src = "assets/svg/greenDots.svg">
+                        <h2>2015</h2>
+                        <div>
+                            <p>Lorem ipsum dolor</p> 
+                            <h3>R$ 6.000,00</h3> 
+                        </div>
+                    </div> 
+
+                    <div class = "period">
+                        <div class = "periodMark">
+                            <img src = "assets/svg/greenEllipse.svg">
+                            <img src = "assets/svg/blackEllipse.svg">
+                        </div>
+                        <img src = "assets/svg/greenDots.svg">
+                        <h2>2010</h2>
+                        <div>
+                            <p>Lorem ipsum dolor</p> 
+                            <h3>R$ 2.000,00</h3> 
+                        </div>
+                    </div> 
+
+                    <div class = "period">
+                        <div class = "periodMark">
+                            <img src = "assets/svg/greenEllipse.svg">
+                            <img src = "assets/svg/blackEllipse.svg">
+                        </div>
+                        <img src = "assets/svg/greenDots.svg">
+                        <h2>2008</h2>
+                        <div>
+                            <p>Lorem ipsum dolor</p> 
+                            <h3>R$ 800,00</h3> 
+                        </div>
+                    </div> 
+
+                    <div class = "lazer"></div>
+                </div> 
+            </section>
+
+            <section class = "fourth">
+                <div class = "heading">
+                    <div class = "headingLeft"> 
+                        <div class = "flippedSquare green"><img src = "assets/svg/businessMan1.svg" alt = "Ícone de homem alcançando seu objetivo"></div> 
+                        <h2>containing Lorem Ipsum passages</h2>
+                    </div>
+                    <p class = "headingRight">Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem IpsumLetraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                    </p> 
+                </div>
+
+                <div class = "corpse">
+                    <h3>A like Aldus PageMaker including</h3>
+                    <div>
+                        <button class = "scroll scrollLeft" id = "scrollItemsLeft"><img src = "assets/svg/upArrow.svg" alt = "Rolar para a esquerda"></button>
+                        <div class = "items">
+                            <div class = "item"> 
+                                <div class = "icon">
+                                    <img src = "assets/svg/flippedSilverSquare.svg" alt = ""> 
+                                    <img src = "assets/svg/speeches.svg" alt = "Palestras"> 
+                                </div>
+                                <p>Palestras</p> <!-- Descrição -->
+                            </div>
+
+                            <div class = "item"> 
+                                <div class = "icon">
+                                    <img src = "assets/svg/flippedSilverSquare.svg"> 
+                                    <img src = "assets/svg/workshops.svg" alt = "Treinamentos e Workshops"> 
+                                </div>
+                                <p>Treinamentos e Workshops</p> <!-- Descrição -->
+                            </div>
+
+                            <div class = "item"> 
+                                <div class = "icon">
+                                    <img src = "assets/svg/flippedSilverSquare.svg" alt = ""> 
+                                    <img src = "assets/svg/formationPrograms.svg" alt = "Programas de formação"> 
+                                </div>
+                                <p>Programas de Formação</p> <!-- Descrição -->
+                            </div>
+
+                            <div class = "item"> 
+                                <div class = "icon">
+                                    <img src = "assets/svg/flippedSilverSquare.svg" alt = ""> 
+                                    <img src = "assets/svg/consulting.svg" alt = "Consultoria de gestão"> 
+                                </div>
+                                <p>Consultoria de Gestão</p> <!-- Descrição -->
+                            </div>
+                            
+                            <div class = "item"> 
+                                <div class = "icon">
+                                    <img src = "assets/svg/flippedSilverSquare.svg" alt = ""> 
+                                    <img src = "assets/svg/mentoring.svg" alt = "Atendimento individual (mentoring)"> 
+                                </div>
+                                <p>Atendimento Individual</p> <!-- Descrição -->
+                                <small>(mentoring)</small>
+                            </div>
+                        </div>
+                        <button class = "scroll scrollRight" id = "scrollItemsRight"><img src = "assets/svg/downArrow.svg" alt = "Rolar para a direita"></button>
+                    </div>
+                </div>
+            </section>
+
+            <section class = "fifth">
+                <div class = "leftContent"> 
+                    <h2>
+                        Versions of Lorem IpsumLetraset sheets 
+                        <span class = "highlight">publishing software like ?</span>
+                    </h2> 
+                    <p>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem IpsumLetraset</p> 
+                </div>
+
+                <button class = "lemon">containing Lorem Ipsum passages</button>
+            </section>
+
+            <section class = "sixth">
+                <div class = "flippedSquareSet">
+                    <div class = "flippedSquare borderBlue"></div>
+                    <div class = "flippedSquare borderBlue"></div>
+                    <div class = "flippedSquare tiny green"></div>
+                </div>
+
+                <div class = "subscribePath">
+                    <h2>Etapas de inscrição</h2>
+                    <div>
+                        <button class = "scroll scrollLeft" id = "scrollStagesLeft"><img src = "assets/svg/upArrow.svg" alt = "Rolar para a esquerda"></button>
+                        <div class="subscribeStages">
+                            <div class = "subscribeStage">
+                                <strong>.1</strong>
+                                <p>Sed ut perspiciatis unde omnis iste natus error</p>
+                            </div> 
+                            <img src = "assets/svg/grayDots.svg">
+    
+                            <div class = "subscribeStage">
+                                <strong>.2</strong>
+                                <p>mistaken idea of denouncing</p>
+                            </div> 
+                            <img src = "assets/svg/grayDots.svg">
+    
+                            <div class = "subscribeStage">
+                                <strong>.3</strong>
+                                <p>or again is there anyone who loves</p>
+                            </div> 
+                            <img src = "assets/svg/grayDots.svg">
+    
+                            <div class = "subscribeStage">
+                                <strong>.4</strong>
+                                <p>ursues or desires to obtain pain of itself</p>
+                            </div> 
+                            <img src = "assets/svg/grayDots.svg">
+    
+                            <div class = "subscribeStage">
+                                <strong>.5</strong>
+                                <p>ursues or desires to obtain pain of itself</p>
+                            </div> 
+                            <img src = "assets/svg/grayDots.svg">
+    
+                            <div class = "subscribeStage">
+                                <strong>.6</strong>
+                                <p>Sed ut perspiciatis unde omnis iste natus error</p>
+                            </div> 
+                            <img src = "assets/svg/grayDots.svg">
+    
+                            <div class = "subscribeStage">
+                                <strong>.7</strong>
+                                <p>mistaken idea of denouncing</p>
+                            </div>
+    
+                            <div class = "subscribeStage">
+                                <img src="assets/svg/flippedSilverBorderSquare.svg" alt=""><img src="assets/svg/flippedSilverBorderSquare.svg" alt="">
+                                <button class = "lemon">Inscreva-se</button>
+                            </div> 
+                        </div>
+                        <button class = "scroll scrollRight" id = "scrollStagesRight"><img src = "assets/svg/downArrow.svg" alt = "Rolar para a direita"></button>
+                    </div>
+                </div>
+            </section>
+            
+            <section class = "seventh">
+                <div class = "flippedSquareSet">
+                    <div class = "flippedSquare tiny green"></div>
+                    <div class = "flippedSquare borderBlue"></div>
+                    <div class = "flippedSquare borderBlue"></div>
+                </div>
+
+                <div class = "leftBlack"> 
+                    <h2>Versions of Lorem IpsumLetraset sheets</h2>
+                    
+                    <div class = "subsection"> 
+                        <h3>PUBLISHING SOFTWARE LIKE</h3> 
+                        <p>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem IpsumLetraset</p>
+                        <p>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem IpsumLetraset</p>
+                        <ul>
+                            <li>
+                                <img src="assets/svg/listMarker.svg"><span>On the other hand, we denounce</span>
+                            </li>
+                            <li>
+                                <img src="assets/svg/listMarker.svg"><span>With righteous indignation </span>
+                            </li>
+                            <li>
+                                <img src="assets/svg/listMarker.svg"><span>Dislike men who are so beguiled</span>
+                            </li>
+                            <li>
+                                <img src="assets/svg/listMarker.svg"><span>Demoralized by the charms of pleasure</span>
+                            </li>
+                            <li>
+                                <span>Tenetur a sapient</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class = "subsection">
+                        <div class = "flippedSquareSet">
+                        </div> 
+                        <div class = "content">
+                            <h3>1914 TRANSALATION BY H.RACKHAM</h3> 
+                            <ul>
+                                <li><img src = "assets/svg/listMarker.svg"><span>Tenetur a sapiente delectus</span></li>
+                                <li><img src = "assets/svg/listMarker.svg"><span>Taque earum rerum hic</span></li>
+                                <li><img src = "assets/svg/listMarker.svg"><span>Beguiled and demoralized</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class = "subsection"> 
+                        <h3>Richard McClintock, a Latin :</h3>
+                        <p>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem IpsumLetraset</p>
+                    </div>
+                </div>
+
+                <div class = "rightBlue"> 
+                    <h2>Versions of Lorem IpsumLetraset sheets</h2> 
+
+                    <div class = "subsection"> 
+                        <h3>Awill uncover many red alteration in some form, by injected</h3>
+                        <ul>
+                            <li><img src = "assets/svg/listMarker.svg" ><span>Pleasure and praising pain was born</span></li>
+                            <li><img src = "assets/svg/listMarker.svg" ><span>Nnisi ut aliquid ex ea commodi consequatur</span></li>
+                            <li><img src = "assets/svg/listMarker.svg" ><span>Undertakes laborious physical exercise</span></li>
+                            <li><img src = "assets/svg/listMarker.svg" ><span>Pleasure that</span></li>
+                            <li><img src = "assets/svg/listMarker.svg" ><span>Et harum quidem rerum</span></li>
+                            <li><img src = "assets/svg/listMarker.svg" ><span>Nam libero tempore, cum soluta nobis </span></li>
+                        </ul>
+                    </div> 
+
+                    <div class = "subsection"> 
+                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock</p>
+                        <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. </p>
+                        <p>You are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators</p>
+                    </div> 
+
+                    <div class = "subsection">
+                        <h3>is simply dummy text simply dummy text of the printing and typesetting industry. Lorem Ipsum</h3> 
+                        <button class = "lemon">It is a long establish</button>
+                    </div>
+                </div> 
+            </section>
+
+            <section class = "eigth">
+                <div class = "flippedSquareSet">
+                    <div class = "flippedSquare borderBlue"></div>
+                    <div class = "flippedSquare borderBlue"></div>
+                    <div class = "flippedSquare tiny green"></div>
+                </div>
+
+                <div class = "icon">
+                    <img src = "assets/svg/money.svg" alt="">
+                </div> 
+
+                <div class = "intro"> 
+                    <h2>Investimento</h2>
+                    <h3>Lorem Ipsum is simply dummy text of the print</h3>
+                    <h4><span class = "bigQuote">&ldquo;</span><span class = "quotedText">Software like Aldus PageMaker including versions of Lorem Ipsum.</span><span class = "bigQuote">&rdquo;</span></h4> 
+                </div>
+
+                <p>Noodel text, and a search for 'lorem ipsum' will uncover many web</p>
+                
+                <div>
+                    <button class = "scroll scrollLeft" id = "scrollFormationsLeft"><img src = "assets/svg/upArrow.svg" alt = "Rolar para a esquerda"></button>
+                    <div class = "formations"> 
+                        <div>
+                            <img src="assets/svg/formation.svg" alt="">
+                            <p>Formação como Coach<br>
+                                <small>(8 dias)</small></p>
+                            <h2>R$7.000</h2>
+                        </div> 
+    
+                        <div>
+                            <img src="assets/svg/formation.svg" alt="">
+                            <p>Formação em Coaching Express</p>
+                            <h2>R$8.000</h2>
+                        </div>
+    
+                        <div>
+                            <img src="assets/svg/formation.svg" alt="">
+                            <p>Formação em Oratória e Curso de Palestrante</p>
+                            <h2>R$2.497</h2>
+                        </div>
+    
+                        <div>
+                            <img src="assets/svg/formation.svg" alt="">
+                            <p>Uma formação em consultoria em gestão<br>
+                                <small>(16 horas)</small></p>
+                            <h2>R$4.000</h2>
+                        </div>
+    
+                        <div>
+                            <img src="assets/svg/formation.svg" alt="">
+                            <p>Programas de formação e treinamento corporativo<br>
+                                <small>(16 horas)</small></p>
+                            <h2>R$3.500</h2>
+                        </div>    
+                    </div>
+                    <button class = "scroll scrollRight" id = "scrollFormationsRight"><img src = "assets/svg/downArrow.svg" alt = "Rolar para a direita"></button>
+                </div>
+            </section>
+
+            <section class = "nineth">
+                <div class = "valueCards"> 
+                    <div> 
+                        <p>Lorem Ipsum has been the industry's</p> 
+                        <h1>R$24.997,00</h1> 
+                    </div> 
+
+                    <div> 
+                        <div>
+                            <small>ou</small>
+                            <h1>R$15.000,00</h1>
+                        </div>
+                        <p>Ipsum has been the industry's standard dummy text ever since the 15000.</p>
+                    </div>
+                </div>
+
+                <div class = "descriptions"> 
+                    <div>
+                        <h2>Lorem Ipsum is therefore</h2>
+                        <p> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                        <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard</p>
+                        <p>Remaining essentially unchanged. It was popularised in the 1960s with the <strong>release of Letraset</strong> sheets containing Lorem Ipsum passages, and more</p>
+                        <h2>Roots in a piece of classical Latin literature from</h2>
+                    </div>
+
+                    <div>
+                        <strong>Web sites still in their infancy. Various versions have evolved over the years, sometimes</strong>
+                        <ul>
+                            <li><img src="assets/svg/listMarker.svg"><span>Roots in a piece of classical Latin literature from 45 BC, making it over </span></li>
+                            <li><img src="assets/svg/listMarker.svg"><span>Many variations of passages of Lorem Ipsum available </span></li>
+                            <li><img src="assets/svg/listMarker.svg"><span>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary</span></li>
+                        </ul>
+                        <h2>The theory of ethics, very popular during the Renaissance.</h2>
+                    </div>
+                </div>
+
+                <button class = "lemon">standard Lorem Ipsum</button>
+            </section>
+
+            <section class = "tenth">
+                <div class = "flippedSquareSet">
+                    <div class = "flippedSquare tiny green"></div>
+                    <div class = "flippedSquare borderBlue"></div>
+                    <div class = "flippedSquare borderBlue"></div>
+                </div>
+
+                <div class = "leftDark"> 
+                    <h2>Depoimentos</h2>
+
+                    <h3>quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia</h3> 
+                    
+                    <div class = "depositions"> 
+                        <div class = "videos"> 
+                            <div class = "video">
+                                <video>
+                                    <source src = "assets/mp4/sampleVideo.mp4" type = "video/mp4">
+                                    Desculpe, mas seu navegador não suporta vídeos HTML5.
+                                </video>
+                                <div><img src = "assets/svg/play.svg" alt = "Botão de play"></div>
+                            </div>
+
+                            <div class = "video">
+                                <video>
+                                    <source src = "assets/mp4/sampleVideo1.mp4"  type = "video/mp4">
+                                    <h2>Desculpe, mas seu navegador não suporta vídeos HTML5.</h2>
+                                </video>
+                                <div><img src = "assets/svg/play.svg" alt = "Botão de play"></div>
+                            </div>
+
+                            <div class = "video">
+                                <video>
+                                    <source src = "assets/mp4/sampleVideo2.mp4"  type = "video/mp4">
+                                    <h2>Desculpe, mas seu navegador não suporta vídeos HTML5.</h2>
+                                </video>
+                                <div><img src = "assets/svg/play.svg" alt = "Botão de play"></div>
+                            </div>
+
+                            <div class = "video">
+                                <video>
+                                    <source src = "assets/mp4/sampleVideo3.mp4"  type = "video/mp4">
+                                    <h2>Desculpe, mas seu navegador não suporta vídeos HTML5.</h2>
+                                </video>
+                                <div><img src = "assets/svg/play.svg" alt = "Botão de play"></div>
+                            </div>
+
+                            <div class = "video">
+                                <video>
+                                    <source src = "assets/mp4/sampleVideo4.mp4"  type = "video/mp4">
+                                    <h2>Desculpe, mas seu navegador não suporta vídeos HTML5.</h2>
+                                </video>
+                                <div><img src = "assets/svg/play.svg" alt = "Botão de play"></div>
+                            </div>
+                        </div> 
+
+                        <div class = "controls">
+                            <button id = "scrollVideosUp"><img src = "assets/svg/upArrow.svg" alt = "Seta para cima"></button>
+                            <button id = "scrollVideosDown"><img src = "assets/svg/downArrow.svg" alt = "Seta para baixo"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "rightLight"> 
+                    <h2>LOREM IPSUM</h2> 
+
+                    <h3>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium:</h3> 
+
+                    <div class = "customers"> 
+                        <div class = "customersCol">
+                            <div><img src="assets/svg/globo.svg" alt="Logo da Globo"></div>
+                            <div><img src="assets/svg/g1.svg" alt="Logo do G1"></div>
+                        </div>
+
+                        <div class = "customersCol">
+                            <div><img src="assets/svg/uol.svg" alt="Logo do UOL"></div>
+                            <div><img src="assets/svg/bandNews.svg" alt="Logo do BandNews"></div>
+                            <div><img src="assets/svg/vendaMais.svg" alt="Logo do VendaMais"></div>
+                        </div>
+
+                        <div class = "customersCol">
+                            <div><img src="assets/svg/cbn.svg" alt="Logo da CBN"></div>
+                            <div><img src="assets/png/oGlobo.png" alt="Logo do O Globo"></div>
+                            <div><img src="assets/png/negocios.png" alt="Logo do Negócios"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class = "eleventh">
+                <div class = "icon"><img src="assets/svg/businessMan1.svg" alt = "Homem alcançando seu objetivo"></div>
+                
+                <div class = "flippedSquareSet">
+                </div>
+
+                <h2>Lorem Ipsum is simply dummy text of THE</h2>
+
+                <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account</p>
+
+                <h3>THE OF simply dummy text of THE?</h3>
+
+                <div class = "moreInfo">
+                    <div class = "icons">
+                        <img src = "assets/svg/positive.svg" alt = "Vantagens">
+                        <img src = "assets/svg/negative.svg" alt = "Desvantagens">
+                    </div>
+                    <div class="description">
+                        <div><p>consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor</p></div>
+                        <div><p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will</p></div>
+                        
+                    </div> 
+                </div>
+            </section>
+
+            <section class = "twelfth">
+                <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum:</h3>
+
+                <div class = "video">
+                    <iframe src = "https://www.youtube.com/embed/2Gg6Seob5Mg" frameborder = "0" allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt = "Vídeo de demonstração"></iframe>
+                </div>
+                <div class = "flippedSquareSet"></div>
+            </section>
+        </main>
+
+        <footer>
+            <div class = "ownerLogo"> 
+                <img src="assets/png/logo3.png" alt = "Logo da empresa">
+            </div>
+            <div class = "copyrightContent"> 
+                <small>Copyright © 2019 - Avaliação KBRTEC Fevereiro de 2021 </small>
+                <small>Av. Senador Feijó, 686 - Vila Matias, Santos - SP, 11015-504</small>
+            </div>
+            <div class = "developerLogo"> 
+                <small>Design by</small>
+                <img src="assets/svg/logoKBR.svg" alt = "Logo da KBRTEC">
+            </div>
+        </footer>
+    </body>
+</html>
