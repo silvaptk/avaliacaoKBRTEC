@@ -20,7 +20,7 @@ Na parte de depoimentos, os vídeos organizados verticalmente no *layout* fornec
 
 Um botão de voltar ao topo também surge no canto inferior direito da tela quando há *scroll*, para que o usuário possa voltar ao topo mais facilmente. 
 
-Quando o botão de "mais informações" é pressionado, um *modal* surge contendo um formulário para inserir informações de contato e uma mensagem. A mesma mensagem é enviada ao servidor via JavaScript, com AJAX. O arquivo `main.php` trata da requisição, enviando os dados inseridos para um banco de dados mySQL.
+Quando o botão de "mais informações" é pressionado, um *modal* surge contendo um formulário para inserir informações de contato e uma mensagem. A mesma mensagem é enviada ao servidor via JavaScript, com AJAX. O arquivo `main.php` trata da requisição, enviando os dados inseridos para um banco de dados mySQL. Para criar o banco de dados, se quiser, utilize o arquivo `contact_messages.sql` disponível aqui.
 
 ## Considerações finais
 
